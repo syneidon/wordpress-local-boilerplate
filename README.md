@@ -49,6 +49,6 @@ A lightweight Docker-based boilerplate for quickly setting up a local WordPress 
 Feel free to open issues or submit pull requests to improve this boilerplate (maybe adding Windows compatibility?)
 
 ## License
-MIT
+[MIT](https://opensource.org/licenses/MIT)
 
 Created with ❤️ by [Syneidon](https://syneidon.com)
