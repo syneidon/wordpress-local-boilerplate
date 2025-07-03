@@ -38,6 +38,7 @@ A lightweight Docker-based boilerplate for quickly setting up a local WordPress 
     docker compose -p "myprojectname" up -d
     ```
 5. Visit http://localhost to complete the WordPress setup.
+    - Database name is equal to env `PROJECT_NAME`
 
 ## Scripts
 
