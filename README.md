@@ -21,7 +21,7 @@ A lightweight Docker-based boilerplate for quickly setting up a local WordPress 
     ```bash
     cp .env.example .env
     ```
-2. Edit .env:
+2. Edit `.env` file:
     - Set a unique `PROJECT_NAME`
     - Adjust port mapping if needed
 3. Download WordPress:
