@@ -5,5 +5,5 @@
 !.env.example
 !.gitignore
 !download_wp.sh
-!docker.sh
+!compose.sh
 !README.md
