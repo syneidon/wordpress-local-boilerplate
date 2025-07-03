@@ -4,5 +4,6 @@
 !docker/
 !.env.example
 !.gitignore
-!.download_wp.sh
+!download_wp.sh
+!docker.sh
 !README.md
