@@ -14,4 +14,4 @@
 
 --
 
-Gifted by [Syneidon](https://syeneidon.com)
+Gifted by [Syneidon](https://syneidon.com){:target="_blank"}
