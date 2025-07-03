@@ -1,0 +1,8 @@
+# ALL files and folders except this specific repo contents :)
+
+*
+!docker/
+!.env.example
+!.gitignore
+!.download_wp.sh
+!README.md
