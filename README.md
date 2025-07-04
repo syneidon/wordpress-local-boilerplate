@@ -37,8 +37,9 @@ A lightweight Docker-based boilerplate for quickly setting up a local WordPress 
     ```bash
     docker compose -p "myprojectname" up -d
     ```
-5. Visit http://localhost to complete the WordPress setup.
-    - Database name is equal to env `PROJECT_NAME`
+5. Visit http://localhost to complete the WordPress setup:
+    - Database Name is equal to env `PROJECT_NAME`
+    - Database Host is not "localhost" but `{PROJECT_NAME}_db`, for example `myproject_db`
 
 ## Scripts
 
