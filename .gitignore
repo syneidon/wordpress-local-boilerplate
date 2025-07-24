@@ -6,5 +6,6 @@
 !.gitignore
 !download_wp.sh
 !compose.sh
+!setup-dotenv.sh
 !README.md
 !example.gif
