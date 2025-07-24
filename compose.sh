@@ -21,11 +21,20 @@ fi
 PHP_HTTP_HOST_ESCAPED=$(printf '%s' "$HTTP_HOST_ONLY" | sed "s/'/\\\\'/g")
 PHP_HTTP_PORT_ESCAPED=$(printf '%s' "$HTTP_PORT_ONLY" | sed "s/'/\\\\'/g")
 
-# Inject WP_HOME and WP_SITEURL into wp-config.php
-if grep -q "define('WP_HOME'" wp-config.php; then
-  echo "WP_HOME already defined. Skipping injection."
+# Determine target file
+if [ -f wp-config.php ]; then
+  CONFIG_FILE="wp-config.php"
 else
+  CONFIG_FILE="wp-config-sample.php"
+fi
+
+# Check if WP_HOME is already defined
+if grep -q "define('WP_HOME'" "$CONFIG_FILE"; then
+  echo "WP_HOME already defined in $CONFIG_FILE. Skipping injection."
+else
+  echo "Injecting WP_HOME and WP_SITEURL into $CONFIG_FILE..."
+
   sed -i "/^\/\* That.*stop editing!.*\*\//i \
 define('WP_HOME', 'http://$PHP_HTTP_HOST_ESCAPED:$PHP_HTTP_PORT_ESCAPED');\n\
-define('WP_SITEURL', 'http://$PHP_HTTP_HOST_ESCAPED:$PHP_HTTP_PORT_ESCAPED');\n" wp-config.php
+define('WP_SITEURL', 'http://$PHP_HTTP_HOST_ESCAPED:$PHP_HTTP_PORT_ESCAPED');\n" "$CONFIG_FILE"
 fi
