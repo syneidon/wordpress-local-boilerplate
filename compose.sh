@@ -22,6 +22,9 @@ PHP_HTTP_HOST_ESCAPED=$(printf '%s' "$HTTP_HOST_ONLY" | sed "s/'/\\\\'/g")
 PHP_HTTP_PORT_ESCAPED=$(printf '%s' "$HTTP_PORT_ONLY" | sed "s/'/\\\\'/g")
 
 # Inject WP_HOME and WP_SITEURL into wp-config.php
+if [ ! -f wp-config.php ]; then
+  mv wp-config-sample.php wp-config.php
+fi
 if grep -q "define('WP_HOME'" wp-config.php; then
   echo "WP_HOME already defined. Skipping injection."
 else
